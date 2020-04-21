@@ -73,9 +73,9 @@ export class SampleCube implements ISystem {
   }
 
   /**
-   * A MetaZone provided function that containst data customized by the
-   * landowner on the MetaZone backend. This gets called every minute when it is
-   * deployed live. During testing its called once in the game.ts file.
+   * A MetaZone provided function that contains data customized by the
+   * landowner on the MetaZone.io system. This gets called every minute when it
+   * is deployed live. During testing its called once in the game.ts file.
    *
    * @param host_data    Data sent from the MetaZone backend to update your Meta
    */
