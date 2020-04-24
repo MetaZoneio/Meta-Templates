@@ -25,7 +25,7 @@ export class ModelTemplate implements ISystem {
 
     /// --- Lets spawn a 3d model ---
     this.modelEntity = new Entity()
-    this.modelEntity.addComponent(new GLTFShape('metas/modeltemplate/models/model.glb'))
+    this.modelEntity.addComponent(new GLTFShape('metas/modeltemplate/models/chair.glb'))
     this.modelEntity.addComponent(new Transform({
       position: new Vector3(0, 2, 0)
     }))

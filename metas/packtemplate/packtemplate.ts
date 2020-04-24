@@ -8,15 +8,15 @@ export class PackTemplate implements ISystem {
   // Library of assets
   library = {
     'chair': {
-      src: 'metas/packtemplate/models/model1.gltf',
+      src: 'metas/packtemplate/models/chair.glb',
       model: null
     },
     'table': {
-      src: 'metas/packtemplate/models/model2.gltf',
+      src: 'metas/packtemplate/models/table.glb',
       model: null
     },
     'vase': {
-      src: 'metas/packtemplate/models/model3.gltf',
+      src: 'metas/packtemplate/models/vase.glb',
       model: null
     }
   }
@@ -83,7 +83,7 @@ export class PackTemplate implements ISystem {
           // Rotation
           itemEntity.getComponent(Transform).rotation.setEuler(metaItem.rotation.x,metaItem.rotation.y,metaItem.rotation.z)
           // Scale
-          itemEntity.getComponent(Transform).scale.set(metaItem.bounds.width,metaItem.bounds.height,metaItem.bounds.depth)
+          itemEntity.getComponent(Transform).scale.set(metaItem.scale.x,metaItem.scale.y,metaItem.scale.z)
         }
         // Create new item
         else if(this.library.hasOwnProperty(metaItem.type)) {
@@ -100,7 +100,7 @@ export class PackTemplate implements ISystem {
           itemEntity.addComponent(new Transform({
             position: new Vector3(metaItem.position.x,metaItem.position.y,metaItem.position.z),
             rotation: Quaternion.Euler(metaItem.rotation.x,metaItem.rotation.y,metaItem.rotation.z),
-            scale: new Vector3(metaItem.bounds.width,metaItem.bounds.height,metaItem.bounds.depth)
+            scale: new Vector3(metaItem.scale.x,metaItem.scale.y,metaItem.scale.z)
           }))
           itemEntity.addComponent(this.library[metaItem.type].model)
           engine.addEntity(itemEntity)

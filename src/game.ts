@@ -1,6 +1,7 @@
 import { YourMetaName } from '../metas/yourmetaname/yourmetaname'
 import { SampleCube } from '../metas/samplecube/samplecube'
 import { ModelTemplate } from '../metas/modeltemplate/modeltemplate'
+import { PackTemplate } from '../metas/packtemplate/packtemplate'
 
 const yourmetanameLandOwnerData = {
   metadata: `
@@ -21,7 +22,7 @@ const samplecubeLandOwnerData = {
   metadata: `
   {
     "cube": {
-      "position": {"x":4, "y":2, "z":4},
+      "position": {"x":12, "y":2, "z":4},
       "scale": {"x":4, "y":4, "z":4},
       "rotation": {"x":0, "y":0, "z":0}
     }
@@ -36,9 +37,9 @@ const modeltemplateLandOwnerData = {
   metadata: `
   {
     "meta": {
-      "position": {"x":4, "y":0, "z":4},
-      "scale": {"x":4, "y":4, "z":4},
-      "rotation": {"x":0, "y":0, "z":0}
+      "position": {"x":8,"y":0.6,"z":8},
+      "scale": {"x":1.6,"y":1.6,"z":1.6},
+      "rotation": {"x":0,"y":0,"z":0}
     }
   }`
 }
@@ -50,28 +51,28 @@ engine.addSystem(new ModelTemplate(null, modeltemplateLandOwnerData))
 const packtemplateLandOwnerData = {
   metadata: `
   {
-    "chair1":{
+    "chair1": {
       "type": "chair",
-      "position": {"x":8,"y":0,"z":5},
-      "bounds": {"x":1,"y":1,"z":1},
-      "rotation": {"x":0,"y":-90,"z":0}
-    }
-    "chair2":{
+      "position": {"x":8,"y":0.6,"z":5},
+      "scale": {"x":1.6,"y":1.6,"z":1.6},
+      "rotation": {"x":0,"y":0,"z":0}
+    },
+    "chair2": {
       "type": "chair",
-      "position": {"x":4,"y":0,"z":5},
-      "bounds": {"x":1,"y":1,"z":1},
-      "rotation": {"x":0,"y":90,"z":0}
-    }
-    "table1":{
+      "position": {"x":4,"y":0.6,"z":5},
+      "scale": {"x":1.6,"y":1.6,"z":1.6},
+      "rotation": {"x":0,"y":180,"z":0}
+    },
+    "table1": {
       "type": "table",
       "position": {"x":6,"y":0,"z":5},
-      "bounds": {"x":1,"y":1,"z":1},
+      "scale": {"x":1,"y":1,"z":2},
       "rotation": {"x":0,"y":0,"z":0}
-    }
-    "vase1":{
+    },
+    "vase1": {
       "type": "vase",
-      "position": {"x":6,"y":2,"z":5},
-      "bounds": {"x":1,"y":1,"z":1},
+      "position": {"x":6,"y":1.5,"z":5},
+      "scale": {"x":0.006,"y":0.006,"z":0.006},
       "rotation": {"x":0,"y":0,"z":0}
     }
   }
@@ -79,4 +80,4 @@ const packtemplateLandOwnerData = {
 }
 
 /// --- Set up your meta system to test ---
-engine.addSystem(new ModelTemplate(null, packtemplateLandOwnerData))
+engine.addSystem(new PackTemplate(null, packtemplateLandOwnerData))
