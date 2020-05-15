@@ -4,12 +4,12 @@ import { ModelTemplate } from '../metas/modeltemplate/modeltemplate'
 import { PackTemplate } from '../metas/packtemplate/packtemplate'
 
 const yourmetanameLandOwnerData = {
-  metadata: `
+  host_data: `
   {
     "cube": {
       "position": {"x":10, "y":1, "z":10},
-      "scale": {"x":2, "y":2, "z":2},
-      "rotation": {"x":0, "y":0, "z":0}
+      "rotation": {"x":0, "y":0, "z":0},
+      "scale": {"x":2, "y":2, "z":2}
     }
   }`
 }
@@ -19,12 +19,12 @@ engine.addSystem(new YourMetaName(null, yourmetanameLandOwnerData))
 
 
 const samplecubeLandOwnerData = {
-  metadata: `
+  host_data: `
   {
     "cube": {
       "position": {"x":12, "y":2, "z":4},
-      "scale": {"x":4, "y":4, "z":4},
-      "rotation": {"x":0, "y":0, "z":0}
+      "rotation": {"x":0, "y":0, "z":0},
+      "scale": {"x":4, "y":4, "z":4}
     }
   }`
 }
@@ -34,12 +34,12 @@ engine.addSystem(new SampleCube(null, samplecubeLandOwnerData))
 
 
 const modeltemplateLandOwnerData = {
-  metadata: `
+  host_data: `
   {
     "meta": {
       "position": {"x":8,"y":0.6,"z":8},
-      "scale": {"x":1.6,"y":1.6,"z":1.6},
-      "rotation": {"x":0,"y":0,"z":0}
+      "rotation": {"x":0,"y":0,"z":0},
+      "scale": {"x":1.6,"y":1.6,"z":1.6}
     }
   }`
 }
@@ -49,31 +49,31 @@ engine.addSystem(new ModelTemplate(null, modeltemplateLandOwnerData))
 
 
 const packtemplateLandOwnerData = {
-  metadata: `
+  host_data: `
   {
     "chair1": {
       "type": "chair",
       "position": {"x":8,"y":0.6,"z":5},
-      "scale": {"x":1.6,"y":1.6,"z":1.6},
-      "rotation": {"x":0,"y":0,"z":0}
+      "rotation": {"x":0,"y":0,"z":0},
+      "scale": {"x":1.6,"y":1.6,"z":1.6}
     },
     "chair2": {
       "type": "chair",
       "position": {"x":4,"y":0.6,"z":5},
-      "scale": {"x":1.6,"y":1.6,"z":1.6},
-      "rotation": {"x":0,"y":180,"z":0}
+      "rotation": {"x":0,"y":180,"z":0},
+      "scale": {"x":1.6,"y":1.6,"z":1.6}
     },
     "table1": {
       "type": "table",
       "position": {"x":6,"y":0,"z":5},
-      "scale": {"x":1,"y":1,"z":2},
-      "rotation": {"x":0,"y":0,"z":0}
+      "rotation": {"x":0,"y":0,"z":0},
+      "scale": {"x":1,"y":1,"z":2}
     },
     "vase1": {
       "type": "vase",
       "position": {"x":6,"y":1.5,"z":5},
-      "scale": {"x":0.006,"y":0.006,"z":0.006},
-      "rotation": {"x":0,"y":0,"z":0}
+      "rotation": {"x":0,"y":0,"z":0},
+      "scale": {"x":0.006,"y":0.006,"z":0.006}
     }
   }
   `

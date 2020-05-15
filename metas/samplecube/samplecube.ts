@@ -40,6 +40,8 @@ export class SampleCube implements ISystem {
     this.cube.addComponent(new OnPointerDown(e => {
       // Change to a random color
       this.cube.getComponent(Material).emissiveColor = Color3.Random()
+      // Visit external link
+      openExternalURL('https://MetaZone.io')
     },
     {
       button: ActionButton.ANY,
@@ -79,32 +81,32 @@ export class SampleCube implements ISystem {
    *
    * @param host_data    Data sent from the MetaZone backend to update your Meta
    */
-  refreshHost(host_data) {
+  refreshHost(host: Object) {
     // Save host info
-    this.host = host_data
+    this.host = host
 
     // Parse metadata
-    if(this.host.metadata) {
-      let metadata = JSON.parse(this.host.metadata)
+    if(this.host.host_data) {
+      let host_data = JSON.parse(this.host.host_data)
 
       ///////// Your landowner adjustable content ///////////
       // You decide which of your creation's entities the landowner can adjust.
 
       /// --- Lets adjust our Cube ---
       this.cube.getComponent(Transform).position.set(
-        metadata.cube.position.x,
-        metadata.cube.position.y,
-        metadata.cube.position.z
-      )
-      this.cube.getComponent(Transform).scale.set(
-        metadata.cube.scale.x,
-        metadata.cube.scale.y,
-        metadata.cube.scale.z
+        host_data.cube.position.x,
+        host_data.cube.position.y,
+        host_data.cube.position.z
       )
       this.cube.getComponent(Transform).rotation.setEuler(
-        metadata.cube.rotation.x,
-        metadata.cube.rotation.y,
-        metadata.cube.rotation.z
+        host_data.cube.rotation.x,
+        host_data.cube.rotation.y,
+        host_data.cube.rotation.z
+      )
+      this.cube.getComponent(Transform).scale.set(
+        host_data.cube.scale.x,
+        host_data.cube.scale.y,
+        host_data.cube.scale.z
       )
 
       ///////// Your landowner adjustable content ///////////

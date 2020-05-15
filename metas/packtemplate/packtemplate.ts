@@ -59,18 +59,18 @@ export class PackTemplate implements ISystem {
    *
    * @param host_data    Data sent from the MetaZone backend to update your Meta
    */
-  refreshHost(host_data) {
+  refreshHost(host: Object) {
     // Save host info
-    this.host = host_data
+    this.host = host
 
     // Parse metadata
-    if(this.host.metadata) {
-      let metadata = JSON.parse(this.host.metadata)
+    if(this.host.host_data) {
+      let host_data = JSON.parse(this.host.host_data)
 
       //
-      const keys = Object.keys(metadata)
+      const keys = Object.keys(host_data)
       for(let i=0; i<keys.length; i++) {
-        let metaItem = metadata[keys[i]];
+        let metaItem = host_data[keys[i]];
 
         // Retrieve existing item
         if(this.items.hasOwnProperty(keys[i])) {

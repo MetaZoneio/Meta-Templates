@@ -56,32 +56,32 @@ export class ModelTemplate implements ISystem {
    *
    * @param host_data    Data sent from the MetaZone backend to update your Meta
    */
-  refreshHost(host_data) {
+  refreshHost(host: Object) {
     // Save host info
-    this.host = host_data
+    this.host = host
 
     // Parse metadata
-    if(this.host.metadata) {
-      let metadata = JSON.parse(this.host.metadata)
+    if(this.host.host_data) {
+      let host_data = JSON.parse(this.host.host_data)
 
       ///////// Your landowner adjustable content ///////////
       // You decide which of your creation's entities the landowner can adjust.
 
       /// --- Lets adjust our 3d model ---
       this.modelEntity.getComponent(Transform).position.set(
-        metadata.meta.position.x,
-        metadata.meta.position.y,
-        metadata.meta.position.z
-      )
-      this.modelEntity.getComponent(Transform).scale.set(
-        metadata.meta.scale.x,
-        metadata.meta.scale.y,
-        metadata.meta.scale.z
+        host_data.meta.position.x,
+        host_data.meta.position.y,
+        host_data.meta.position.z
       )
       this.modelEntity.getComponent(Transform).rotation.setEuler(
-        metadata.meta.rotation.x,
-        metadata.meta.rotation.y,
-        metadata.meta.rotation.z
+        host_data.meta.rotation.x,
+        host_data.meta.rotation.y,
+        host_data.meta.rotation.z
+      )
+      this.modelEntity.getComponent(Transform).scale.set(
+        host_data.meta.scale.x,
+        host_data.meta.scale.y,
+        host_data.meta.scale.z
       )
 
       ///////// Your landowner adjustable content ///////////
