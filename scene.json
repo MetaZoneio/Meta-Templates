@@ -1,7 +1,9 @@
 {
   "display": {
     "title": "MetaZone Templates",
-    "favicon": "favicon_asset"
+    "description": "Meta powered by MetaZone",
+    "favicon": "favicon_asset",
+    "navmapThumbnail": "thumbnail_asset"
   },
   "contact": {
     "name": "author-name",
@@ -14,16 +16,7 @@
     ],
     "base": "0,0"
   },
-  "communications": {
-    "type": "webrtc",
-    "signalling": "https://signalling-01.decentraland.org"
-  },
-  "policy": {
-    "contentRating": "E",
-    "fly": true,
-    "voiceEnabled": true,
-    "blacklist": []
-  },
+  "requiredPermissions": [],
   "main": "bin/game.js",
   "tags": [],
   "spawnPoints": [
